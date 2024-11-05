@@ -1,0 +1,202 @@
+/* Basic Body and Container Styles */
+body {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    min-height: 100vh;
+    background: #eef2f7;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    perspective: 1000px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.app-container {
+    display: flex;
+    gap: 40px; /* Space between form and card */
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Form Container Styling */
+.form-container {
+    width:40vw;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow-y: scroll;
+    height:80vh;
+}
+
+.form-container h2, .form-container h3 {
+    color: #373737;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Font Awesome';
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #373737;
+}
+
+input[type="text"],
+input[type="color"],
+input[type="file"] {
+    width:90%;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top:8px;
+    margin-bottom: 10px; /* Adds spacing between fields */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-button {
+    background-color: #4e54c8;
+    color: white;
+}
+
+.download-button {
+    background-color: #8f94fb;
+    color: white;
+    transform: perspective(500px) translateZ(5px);
+}
+
+.print-button {
+    background-color: #56c1ff;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05) rotateX(5deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Styling with Enhanced 3D Effects */
+.card {
+    width: 420px;
+    height: 280px;
+    /* border-radius: 20px; */
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: perspective(500px) rotateY(0deg);
+    font-family: 'Font Awesome';
+}
+
+.card:hover {
+    transform: rotateY(-5deg) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-details {
+    display: flex;
+    align-items: center;
+    margin-top:35px;
+}
+
+.card-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-left: 70px;
+    /* transform: rotate(-3deg); */
+    transition: transform 0.2s ease;
+}
+
+.card-photo img:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.card-text {
+    text-align: left;
+    padding-left:10px;
+}
+.card h2 {
+    font-size: 24px;
+    margin-bottom:5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card p {
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Print Styling */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #card-container, #card-container * {
+        visibility: visible;
+    }
+    #card-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        transform: none; /* Remove 3D effect for printing */
+    }
+}
+
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.5); /* Track color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Inner shadow for 3D effect */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #ff98f6, #ff5d93); /* Thumb color with gradient */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #3059fc, #44caff); /* Lighter color on hover */
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(145deg, #fbbfd3, #fffcfb); /* Darker color when active */
+    transform: scale(0.95); /* Slightly smaller when active */
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}

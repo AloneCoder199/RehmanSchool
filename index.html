@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script
+</head>
+<body>
+    <h1>Welcome to Rehman School - Create Your Student Card Easily!</h1>
+    <div class="app-container">
+        <div class="form-container">
+            <h2>Customize Your Student Card</h2>
+
+            <!-- Input Fields for Card Content -->
+            <label for="schoolName">School Name:</label>
+            <input type="text" id="schoolName" placeholder="Enter school name">
+
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" placeholder="Enter student name">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter address">
+
+            <label for="class">Class:</label>
+            <input type="text" id="class" placeholder="Enter class">
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" placeholder="Enter phone number">
+
+            <label for="studentImage">Upload Student Image:</label>
+            <input type="file" id="studentImage" accept="image/*">
+            
+            <!-- Customization Options -->
+            <h3>Appearance Settings</h3>
+            <label for="bgColor">Background Gradient:</label>
+            <input type="color" id="bgColorStart" value="#4e54c8"> to 
+            <input type="color" id="bgColorEnd" value="#8f94fb">
+
+            <label for="textColor">Text Color:</label>
+            <input type="color" id="textColor" value="#ffffff">
+
+            <button class="generate-button" onclick="generateCard()">Generate Card</button>
+            <button class="download-button" onclick="downloadCardImage()">Download Card as Image</button>
+            <button class="print-button" onclick="printCard()">Print Card in 4K</button>
+        </div>
+
+        <!-- Student Card Template with Enhanced Layout -->
+        <div id="card-container" class="card">
+            <div class="card-content">
+                <h2 id="cardSchoolName"></h2>
+                <div class="card-details">
+                    <div class="card-text">
+                        <p><strong>Name:</strong> <span id="cardStudentName"></span></p>
+                        <p><strong>Class:</strong> <span id="cardClass"></span></p>
+                        <p><strong>Phone:</strong> <span id="cardPhone"></span></p>
+                        <p><strong>Address:</strong> <span id="cardAddress"></span></p>
+                    </div>
+                    <div class="card-photo">
+                        <img id="cardImage" src="" alt="Student Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
